@@ -6,20 +6,20 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      purple: "#4F46E5",
-      grey: {
-        light: "#f9f9f9",
-      },
-    },
     fontFamily: {
       montserrat: ["Montserrat", "Helvetica Neue", "Helvetica", "sans-serif"],
     },
-    // extend: {
-    //   fontSize: {
-    //     "10xl": "10rem",
-    //   },
-    // },
+    extend: {
+      fontSize: {
+        "10xl": "10rem",
+      },
+      colors: {
+        purple: "#4F46E5",
+        grey: {
+          light: "#f9f9f9",
+        },
+      },
+    },
   },
   plugins: [],
 };
