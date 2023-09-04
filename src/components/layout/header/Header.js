@@ -28,8 +28,6 @@ export default function Header() {
     setIsActive(!isActive);
   };
 
-  console.log(isActive);
-
   const navigationItems = [
     { label: "Home", link: "/" },
     { label: "About", link: "/about" },
@@ -38,18 +36,28 @@ export default function Header() {
   ];
 
   return (
-    <header className="lg:bg-white bg-grey-light lg:fixed relative w-full">
+    <header className="bg-grey-light lg:fixed relative w-full">
       <nav
         className="mx-auto flex items-center justify-between p-6 lg:px-12 absolute w-full lg:relative"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5">
-            <Image src="/logo.svg" alt="logo" width={150} height={80} />
+            <Image
+              className="logo"
+              src="/logo.svg"
+              alt="logo"
+              width={100}
+              height={80}
+            />
           </a>
         </div>
         <div onClick={navbarHandler} className="close-btn lg:hidden">
-          <Image src="/burger.svg" alt="logo" width={26} height={26} />
+          {!isActive ? (
+            <Image src="/burger.svg" alt="burger menu" width={26} height={26} />
+          ) : (
+            ""
+          )}
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           <NavigationMap navigationItems={navigationItems} />
@@ -82,13 +90,13 @@ export default function Header() {
       <div
         className={`${
           isActive ? "w-full" : "w-0"
-        } lg:hidden bg-grey-light h-screen w-full absolute z-10 overflow-hidden transition-width duration-500 ease-in-out`}
+        } lg:hidden bg-grey-light h-screen absolute z-10 overflow-hidden transition-width duration-500 ease-in-out`}
       >
         <div
           onClick={navbarHandler}
           className="close-btn lg:hidden p-6 flex justify-end"
         >
-          <Image src="/close.svg" alt="logo" width={26} height={26} />
+          <Image src="/close.svg" alt="close button" width={26} height={26} />
         </div>
         <div className="space-y-2">
           <div className="mt-2 space-y-2" id="disclosure-1">

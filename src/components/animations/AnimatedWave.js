@@ -1,12 +1,12 @@
 import { renderToStaticMarkup } from "react-dom/server";
-// Step 1. Define the props. you can add other css properties according to your perferences, like zIndex
+import { detectScreenSize } from "@/helpers/screen";
+
 const AnimatedWave = ({
   color,
   animationDuration,
   animationDirection,
   opacity,
 }) => {
-  //  Step 2. create a svg wave, i created this using figma
   const wave = (
     <svg viewBox="0 0 1000 126" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -16,23 +16,23 @@ const AnimatedWave = ({
     </svg>
   );
 
-  // Step 3. render svg to string
+  // render svg to string
   const svgAsString = renderToStaticMarkup(wave);
-  // Step 4. encode string to url so that we can use it in the background property
+  // encode string to url so that we can use it in the background property
   const encodedWaveSvg = encodeURIComponent(svgAsString);
 
   return (
     <div
       style={{
-        // Step 5. use encodedsvg as background
+        // use encodedsvg as background
         background: `url('data:image/svg+xml,${encodedWaveSvg}')`,
         position: "absolute",
-        bottom: 0,
+        bottom: "-5px",
         width: "100%",
-        // Step 6. height and background size should match the svg viewBox for a smooth animation
+        // height and background size should match the svg viewBox for a smooth animation
         height: 126,
-        backgroundSize: "1000px 126px",
-        // animation-name is wave, we'll create this in the next step
+        backgroundSize: "950px 126px",
+        // animation-name is wave
         animation: `wave ${animationDuration} linear infinite`,
         animationDirection: animationDirection,
         opacity: opacity,
@@ -41,3 +41,5 @@ const AnimatedWave = ({
   );
 };
 export default AnimatedWave;
+
+// 950px -5px

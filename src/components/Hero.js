@@ -1,6 +1,6 @@
 import anime from "animejs";
 import { useState, useEffect } from "react";
-import AnimatedWave from "./AnimatedWave";
+import AnimatedWave from "./animations/AnimatedWave";
 
 const Typewriter = ({ text, delay, ...props }) => {
   const [currentText, setCurrentText] = useState("");

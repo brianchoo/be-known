@@ -6,6 +6,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.logo {
+  width: 150px;
+  height: auto;
+}
+
 @keyframes wave {
   0% {
     background-position-x: 1000px;
