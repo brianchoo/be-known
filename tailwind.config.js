@@ -14,10 +14,17 @@ module.exports = {
         "10xl": "10rem",
       },
       colors: {
+        primary: "#4F46E5",
+        secondary: "#ecc94b",
         purple: "#4F46E5",
+        black: "#343434",
         grey: {
-          light: "#f9f9f9",
+          100: "#F0F0F0",
+          200: "#f9f9f9",
         },
+      },
+      borderRadius: {
+        "4xl": "2rem",
       },
     },
   },

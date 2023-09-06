@@ -1,13 +1,38 @@
+import { useEffect } from "react";
 import Image from "next/image";
 import Hero from "@/components/Hero";
+import anime from "animejs";
+import { useInView } from "react-intersection-observer";
+//https://www.npmjs.com/package/react-intersection-observer
 
 function ServiceItem({ serviceItems }) {
+  const [ref, inView] = useInView({
+    rootMargin: "300px",
+    triggerOnce: true, // Ensures the animation only triggers once when the element comes into view.
+  });
+  useEffect(() => {
+    if (inView) {
+      anime({
+        loop: false,
+        targets: ".services",
+        translateY: [-5, 0],
+        opacity: [0, 1],
+        duration: 600,
+        easing: "linear",
+        delay: anime.stagger(400),
+      });
+    }
+  }, [inView]);
   return (
     <>
       {serviceItems.map((item, index) => (
-        <div key={index} className="flex gap-6 mb-10">
+        <div
+          key={index}
+          ref={ref}
+          className="flex gap-6 mb-10 services opacity-0"
+        >
           <div className="shrink-0">
-            <Image src={item.src} alt={item.alt} width={50} height={80} />
+            <Image src={item.src} alt={item.alt} width={45} height={80} />
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
@@ -19,7 +44,7 @@ function ServiceItem({ serviceItems }) {
   );
 }
 
-const serviceItemss = [
+const serviceItems = [
   {
     src: "/design.svg",
     alt: "design and branding",
@@ -54,9 +79,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="py-16">
+      <section className="py-16 services-section">
         <div className="mb-20">
-          <h2 className="text-5xl text-center mb-10">What do we do exactly?</h2>
+          <h2 className="text-5xl text-center mb-10 font-semibold">
+            What Do We Do Exactly?
+          </h2>
           <p className="max-w-screen-lg mx-auto text-center text-xl">
             We help businesses grow their online presence through a variety of
             services, including website design and development, and search
@@ -64,7 +91,7 @@ export default function Home() {
             tools and resources they need to succeed online.
           </p>
         </div>
-        <div className="grid grid-cols-12 max-w-screen-lg mx-auto lg:gap-12">
+        <div className="grid grid-cols-12 max-w-screen-lg mx-auto lg:gap-16">
           <div className="lg:col-span-6 col-span-12">
             <img
               className="rounded w-full h-auto"
@@ -73,10 +100,10 @@ export default function Home() {
             />
           </div>
           <div className="lg:col-span-6 col-span-12">
-            <ServiceItem serviceItems={serviceItemss} />
+            <ServiceItem serviceItems={serviceItems} />
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

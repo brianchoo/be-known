@@ -1,6 +1,7 @@
 import anime from "animejs";
 import { useState, useEffect } from "react";
 import AnimatedWave from "./animations/AnimatedWave";
+import Button from "@/components/button/Button";
 
 const Typewriter = ({ text, delay, ...props }) => {
   const [currentText, setCurrentText] = useState("");
@@ -39,10 +40,19 @@ const Hero = () => {
       delay: 3000,
       duration: 1200,
     });
+
+    anime({
+      loop: false,
+      targets: [".button"],
+      opacity: [0, 1],
+      easing: "linear",
+      delay: 3000,
+      duration: 1200,
+    });
   }, []);
 
   return (
-    <div className="h-screen bg-grey-light flex justify-center items-center">
+    <div className="h-screen bg-grey-200 flex justify-center items-center">
       <AnimatedWave color={"#4F46E5"} animationDuration="4s" opacity={"0.6"} />
       <AnimatedWave color={"#4F46E5"} animationDuration="12s" opacity={"0.3"} />
 
@@ -69,6 +79,12 @@ const Hero = () => {
           Our dedication lies in delivering top-notch and expert-level web
           design and development services.
         </div>
+        <Button
+          isLink={true}
+          href="/contact"
+          margin="mt-7"
+          padding="px-7 py-3"
+        />
       </div>
     </div>
   );

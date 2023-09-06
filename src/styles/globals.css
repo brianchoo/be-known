@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  color: #343434;
 }
 
 .logo {
@@ -19,6 +20,41 @@ body {
     background-position-x: 0px;
   }
 }
+
+.services-section h2::after {
+  content: "";
+  display: block;
+  background-color: #333333;
+  height: 2px;
+  width: 120px;
+  margin: 25px auto 0;
+}
+
+.footer-link {
+  list-style: none;
+  padding: 0; 
+}
+
+.footer-link li {
+  position: relative;
+}
+
+.footer-link li::before {
+  content: ""; 
+  position: absolute;
+  left: 0; 
+  background: url('../../public/caret-right.svg') no-repeat center center;
+  width: 12px; 
+  height: 12px; 
+  background-size: cover; 
+  margin-right: 10px; 
+}
+
+
+/* .services-section {
+  background-image: url('../../public/images/background-ink.png');
+  background-repeat: no-repeat;
+} */
 
 /* :root {
   --foreground-rgb: 0, 0, 0;

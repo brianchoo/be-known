@@ -30,13 +30,35 @@ const navigationItems = [
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navbarHandler = () => {
     setIsActive(!isActive);
   };
 
   return (
-    <header className="bg-grey-light lg:fixed relative w-full">
+    <header
+      className={`${
+        isScrolled
+          ? "bg-white border-b border-black border-opacity-20"
+          : "bg-grey-light"
+      } lg:fixed relative w-full z-50 transition-all duration-200 ease-in`}
+    >
       <nav
         className="mx-auto flex items-center justify-between p-6 lg:px-12 absolute w-full lg:relative"
         aria-label="Global"
