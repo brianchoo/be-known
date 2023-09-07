@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Hero from "@/components/Hero";
+// import Ball from "@/components/animations/Ball";
 import anime from "animejs";
 import { useInView } from "react-intersection-observer";
 //https://www.npmjs.com/package/react-intersection-observer
 
-function ServiceItem({ serviceItems }) {
+const ServiceItem = ({ serviceItems }) => {
   const [ref, inView] = useInView({
     rootMargin: "300px",
     triggerOnce: true, // Ensures the animation only triggers once when the element comes into view.
@@ -29,7 +30,7 @@ function ServiceItem({ serviceItems }) {
         <div
           key={index}
           ref={ref}
-          className="flex gap-6 mb-10 services opacity-0"
+          className="services-item flex lg:gap-6 mb-10 services opacity-0"
         >
           <div className="shrink-0">
             <Image src={item.src} alt={item.alt} width={45} height={80} />
@@ -42,7 +43,7 @@ function ServiceItem({ serviceItems }) {
       ))}
     </>
   );
-}
+};
 
 const serviceItems = [
   {
@@ -78,6 +79,7 @@ const serviceItems = [
 export default function Home() {
   return (
     <>
+      {/* <Ball /> */}
       <Hero />
       <section className="py-16 services-section">
         <div className="mb-20">

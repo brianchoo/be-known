@@ -1,5 +1,4 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { detectScreenSize } from "@/helpers/screen";
 
 const AnimatedWave = ({
   color,

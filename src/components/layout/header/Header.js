@@ -55,12 +55,14 @@ export default function Header() {
     <header
       className={`${
         isScrolled
-          ? "bg-white border-b border-black border-opacity-20"
-          : "bg-grey-light"
-      } lg:fixed relative w-full z-50 transition-all duration-200 ease-in`}
+          ? "bg-white border-b border-black border-opacity-10"
+          : "bg-grey-200"
+      } lg:fixed relative w-full z-50 transition-all duration-200 ease-in-out`}
     >
       <nav
-        className="mx-auto flex items-center justify-between p-6 lg:px-12 absolute w-full lg:relative"
+        className={`${
+          isScrolled ? "p-3" : "p-6"
+        } mx-auto flex items-center justify-between lg:px-12 absolute w-full lg:relative transition-all duration-200 ease-in-out`}
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -112,7 +114,7 @@ export default function Header() {
       <div
         className={`${
           isActive ? "w-full" : "w-0"
-        } lg:hidden bg-grey-light h-screen absolute z-10 overflow-hidden transition-width duration-500 ease-in-out`}
+        } lg:hidden bg-grey-200 h-screen absolute z-10 overflow-hidden transition-width duration-500 ease-in-out`}
       >
         <div
           onClick={navbarHandler}

@@ -7,7 +7,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      montserrat: ["Montserrat", "Helvetica Neue", "Helvetica", "sans-serif"],
+      mont: ["var(--font-mont)"],
+      // montserrat: ["Montserrat", "Helvetica Neue", "Helvetica", "sans-serif"],
     },
     extend: {
       fontSize: {
