@@ -53,7 +53,7 @@ const Contact = () => {
           <Typewriter
             id="first"
             className="lg:text-7xl font-semibold uppercase absolute top-0 w-full"
-            text="Let's "
+            text="Let's Talk"
             delay={150}
           />
         </div>

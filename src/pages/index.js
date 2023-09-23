@@ -30,14 +30,14 @@ const ServiceItem = ({ serviceItems }) => {
         <div
           key={index}
           ref={ref}
-          className="services-item flex lg:gap-6 mb-10 services opacity-0"
+          className="services-item flex lg:gap-6 mb-10 services opacity-0 lg:col-span-6"
         >
           <div className="shrink-0">
             <Image src={item.src} alt={item.alt} width={45} height={80} />
           </div>
           <div>
             <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-            <p>{item.description}</p>
+            <p className="leading-7 pr-8">{item.description}</p>
           </div>
         </div>
       ))}
@@ -81,28 +81,62 @@ export default function Home() {
     <>
       {/* <Ball /> */}
       <Hero />
-      <section className="py-16 services-section">
+      <section className="py-32 services-section">
         <div className="mb-20">
-          <h2 className="text-5xl text-center mb-10 font-semibold">
+          <h2 className="text-6xl text-center mb-10 font-bold">
             What Do We Do Exactly?
           </h2>
-          <p className="max-w-screen-lg mx-auto text-center text-xl">
+          <p className="max-w-screen-lg mx-auto text-center text-xl leading-7">
             We help businesses grow their online presence through a variety of
             services, including website design and development, and search
             engine optimization. We do this by providing businesses with the
             tools and resources they need to succeed online.
           </p>
         </div>
-        <div className="grid grid-cols-12 max-w-screen-lg mx-auto lg:gap-16">
-          <div className="lg:col-span-6 col-span-12">
+        <div className="grid grid-cols-12 max-w-screen-lg mx-auto lg:gap-12">
+          <ServiceItem serviceItems={serviceItems} />
+        </div>
+      </section>
+      <section className="contact-section h-[400px] w-full bg-center bg-fixed">
+        <div className="contact-section-link flex h-full justify-center items-center">
+          <a
+            href="/contact"
+            className="text-5xl text-white font-bold uppercase pb-2"
+          >
+            Let's talk about your project.
+          </a>
+        </div>
+      </section>
+      <section className="py-32 projects-section">
+        <div className="mb-20">
+          <h2 className="text-6xl text-center mb-10 font-bold">Our Work.</h2>
+          <p className="max-w-screen-lg mx-auto text-center text-xl">
+            Browse our most recent projects below and enjoy our handmade work
+            with love for every detail.
+          </p>
+        </div>
+        <div class="grid grid-cols-12 max-w-screen-lg mx-auto lg:gap-x-6">
+          <div class="col-span-4 bg-gray-950 max-h-96 shadow-border">
             <img
-              className="rounded w-full h-auto"
-              src="/images/service-picture.jpg"
-              alt="service image"
+              src="/images/centrewest.webp"
+              alt="centrewest"
+              className="object-cover h-full w-full object-top"
             />
           </div>
-          <div className="lg:col-span-6 col-span-12">
-            <ServiceItem serviceItems={serviceItems} />
+          <div class="col-span-4 bg-green-400 max-h-96 shadow-border">
+            <img
+              src="/images/evanlee.webp"
+              alt="evanlee"
+              className="object-cover h-full w-full object-top"
+            />
+          </div>
+          <div class="col-span-4 shadow-border">
+            <a
+              href="/contact"
+              className="text-5xl leading-tight font-bold flex items-center justify-center w-full h-full hover:bg-purple hover:text-white transition-all duration-300 ease-in-out relative"
+            >
+              <div className="started">Let's Get Started.</div>
+            </a>
           </div>
         </div>
       </section>
