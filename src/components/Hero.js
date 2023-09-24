@@ -52,26 +52,26 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-grey-200 flex justify-center items-center">
+    <div className="h-screen bg-grey-200 flex justify-center items-center px-8 lg:px-0">
       <AnimatedWave color={"#4F46E5"} animationDuration="4s" opacity={"0.6"} />
       <AnimatedWave color={"#4F46E5"} animationDuration="12s" opacity={"0.3"} />
 
       <div className="relative w-full text-center">
         <div
           id="dummy"
-          className="lg:text-9xl font-semibold uppercase w-full invisible"
+          className="lg:text-9xl text-5xl font-semibold uppercase w-full invisible"
         >
           Dummy
         </div>
         <Typewriter
           id="first"
-          className="lg:text-9xl font-semibold uppercase absolute top-0 w-full"
+          className="lg:text-9xl text-5xl font-semibold uppercase absolute top-0 w-full"
           text="Be Visible."
           delay={150}
         />
         <h1
           id="second"
-          className="lg:text-9xl font-semibold uppercase absolute top-0 w-full"
+          className="lg:text-9xl text-5xl font-semibold uppercase absolute top-0 w-full"
         >
           Be Known.
         </h1>
