@@ -1,20 +1,19 @@
-import { useState, useEffect } from "react";
-
-const initFormValues = { name: "", phone: "", email: "", message: "" };
+import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const [formValues, setFormValues] = useState(initFormValues);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const handleChange = (e) => {
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const onSubmitData = (data) => console.log(data);
+  console.log(watch("name"));
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmitData)}>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -27,9 +26,8 @@ const Form = () => {
                 </label>
                 <div className="mt-2">
                   <input
-                    onChange={handleChange}
+                    {...register("name")}
                     type="text"
-                    name="name"
                     id="name"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -41,9 +39,8 @@ const Form = () => {
                 </label>
                 <div className="mt-2">
                   <input
-                    onChange={handleChange}
+                    {...register("phone")}
                     type="text"
-                    name="phone"
                     id="phone"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -56,9 +53,8 @@ const Form = () => {
                 </label>
                 <div className="mt-2">
                   <input
-                    onChange={handleChange}
+                    {...register("email")}
                     id="email"
-                    name="email"
                     type="email"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -71,9 +67,8 @@ const Form = () => {
                 </label>
                 <div className="mt-2">
                   <textarea
-                    onChange={handleChange}
+                    {...register("message")}
                     id="message"
-                    name="message"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
