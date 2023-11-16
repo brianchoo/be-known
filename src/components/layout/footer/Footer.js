@@ -54,10 +54,10 @@ const Footer = () => {
           <div className="uppercase font-bold mb-4">Navigations</div>
           <FooterLinkList footerLinks={FOOTERLINKS} />
         </div>
-        <div className="lg:col-span-3 col-span-12 text-white tracking-wide">
+        {/* <div className="lg:col-span-3 col-span-12 text-white tracking-wide">
           <div className="uppercase font-bold mb-4">Socials</div>
           <div>Insta and fb here</div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

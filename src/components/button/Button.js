@@ -15,7 +15,7 @@ const Button = ({ isLink, href, margin = "", padding = "", width = "" }) => {
   } else {
     return (
       <div
-        className={`button  flex items-center justify-center grow-0 ${margin} ${width}`}
+        className={`button flex items-center justify-center grow-0 ${margin} ${width}`}
       >
         <div
           className={`${padding} bg-primary rounded-4xl text-white font-semibold text-lg`}

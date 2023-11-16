@@ -60,13 +60,13 @@ const serviceItems = [
     description:
       "Our skilled team creates responsive, user-friendly websites that not only look stunning but also function seamlessly. With a focus on user experience, we ensure your website leaves a lasting impression and drives business growth.",
   },
-  {
-    src: "/graph.svg",
-    alt: "online-marketing",
-    title: "Online Marketing",
-    description:
-      "We analyze data, optimize campaigns, and stay ahead of industry trends to ensure your brand thrives in the digital landscape. Maximize your online potential with our results-driven approach.",
-  },
+  // {
+  //   src: "/graph.svg",
+  //   alt: "online-marketing",
+  //   title: "Online Marketing",
+  //   description:
+  //     "We analyze data, optimize campaigns, and stay ahead of industry trends to ensure your brand thrives in the digital landscape. Maximize your online potential with our results-driven approach.",
+  // },
   {
     src: "/maintenance.svg",
     alt: "maintenance and support",
