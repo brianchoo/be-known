@@ -36,22 +36,38 @@ const Form = () => {
                   <FormInput
                     label="Name"
                     ref={ref}
-                    {...register("name")}
+                    {...register("name", {
+                      required: true,
+                      minLength: 1,
+                      pattern: /^[a-zA-Z]+$/,
+                    })}
                     id="name"
                     type="text"
                   />
                 </div>
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">Name is required.</p>
+                )}
               </div>
               <div className="sm:col-span-3">
                 <div className="mt-2">
                   <FormInput
                     label="Phone Number"
                     ref={ref}
-                    {...register("phone")}
+                    {...register("phone", {
+                      required: true,
+                      minLength: 9,
+                      pattern: /^[-+0-9]+$/,
+                    })}
                     id="phone"
                     type="text"
                   />
                 </div>
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Phone number is required.
+                  </p>
+                )}
               </div>
 
               <div className="sm:col-span-6">
@@ -59,12 +75,21 @@ const Form = () => {
                   <FormInput
                     label="Email"
                     ref={ref}
-                    {...register("email")}
+                    {...register("email", {
+                      required: true,
+                      minLength: 9,
+                      pattern:
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                    })}
                     id="email"
                     type="email"
-                    name="email"
                   />
                 </div>
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Email is required.
+                  </p>
+                )}
               </div>
 
               <div className="sm:col-span-6">
@@ -73,10 +98,18 @@ const Form = () => {
                     label="Message"
                     ref={ref}
                     isTextarea={true}
-                    {...register("message")}
+                    {...register("message", {
+                      required: true,
+                      minLength: 1,
+                    })}
                     id="textarea"
                   />
                 </div>
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">
+                    Message is required.
+                  </p>
+                )}
               </div>
             </div>
           </div>

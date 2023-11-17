@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <div className="footer bg-black py-16 px-8 lg:px-0">
       <div className="grid grid-cols-12 lg:gap-16 max-w-screen-xl mx-auto">
-        <div className="lg:col-span-3 col-span-12 text-white mb-8 lg:mb-0">
+        <div className="lg:col-span-4 col-span-12 text-white mb-8 lg:mb-0">
           <Image
             src="/logo-white.svg"
             priority={true}
@@ -33,11 +33,14 @@ const Footer = () => {
             height={80}
           />
           <div className="text-sm font-regular leading-6">
+            <a href="https://api.whatsapp.com/send?phone=60168857937">
+              Whatsapp
+            </a>
             Our dedication lies in delivering top-notch and expert-level web
             design and development services.
           </div>
         </div>
-        <div className="lg:col-span-3 col-span-12 text-white tracking-wide mb-8 lg:mb-0">
+        <div className="lg:col-span-4 col-span-12 text-white tracking-wide mb-8 lg:mb-0">
           <div className="uppercase font-bold mb-4">Our office</div>
           <p className="text-xs font-regular leading-6 uppercase">No.62,</p>
           <p className="text-xs font-regular leading-6 uppercase">
@@ -50,7 +53,7 @@ const Footer = () => {
             47800, Petaling Jaya
           </p>
         </div>
-        <div className="lg:col-span-3 col-span-12 text-white tracking-wide mb-6 lg:mb-0">
+        <div className="lg:col-span-4 col-span-12 text-white tracking-wide mb-6 lg:mb-0">
           <div className="uppercase font-bold mb-4">Navigations</div>
           <FooterLinkList footerLinks={FOOTERLINKS} />
         </div>
