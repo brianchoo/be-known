@@ -1,4 +1,11 @@
-const Button = ({ isLink, href, margin = "", padding = "", width = "" }) => {
+const Button = ({
+  isLink,
+  href,
+  margin = "",
+  padding = "",
+  width = "",
+  text,
+}) => {
   if (isLink) {
     return (
       <div
@@ -6,9 +13,9 @@ const Button = ({ isLink, href, margin = "", padding = "", width = "" }) => {
       >
         <a
           href={href}
-          className={`${padding} bg-primary rounded-4xl text-white font-semibold text-lg cursor-pointer`}
+          className={`${padding} bg-primary border rounded-4xl text-white font-semibold text-lg cursor-pointer transition-all duration-300 ease-in-out hover:border-black hover:text-black hover:bg-white `}
         >
-          Let's Get Started
+          {text}
         </a>
       </div>
     );
@@ -20,7 +27,7 @@ const Button = ({ isLink, href, margin = "", padding = "", width = "" }) => {
         <div
           className={`${padding} bg-primary rounded-4xl text-white font-semibold text-lg`}
         >
-          Let's Get Started
+          {text}
         </div>
       </div>
     );

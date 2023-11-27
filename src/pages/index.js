@@ -135,7 +135,7 @@ export default function Home() {
             </a>
             <p className="text-center mt-4 font-semibold">Centre West</p>
           </div>
-          <div className="col-span-4 bg-green-400 max-h-96 shadow-border mb-10 lg:mb-0">
+          <div className="col-span-4 bg-green-400 max-h-96 shadow-border mb-20 lg:mb-0">
             <a
               href="https://evanlee.my/"
               target="_blank"
@@ -156,7 +156,7 @@ export default function Home() {
               Evan Lee Associates & Solicitors
             </p>
           </div>
-          <div className="col-span-4 shadow-border hidden lg:block">
+          <div className="col-span-4 shadow-border block h-96">
             <a
               href="/contact"
               className="text-5xl leading-tight font-bold flex items-center justify-center w-full h-full hover:bg-purple hover:text-white transition-all duration-300 ease-in-out relative"

@@ -16,7 +16,9 @@ export default async (req, res) => {
       from: process.env.USER,
       to: process.env.USER,
       subject: `Contact from ${name} - ${email}`,
-      html: `<h1>${message} - ${phone}</h1>`,
+      html: `<div>Message: ${message}</div>
+            <div> Phone: ${phone} </div>
+            <div> Email: ${email} </div>`,
     });
   } catch (err) {
     console.log(err);

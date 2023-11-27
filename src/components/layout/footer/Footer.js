@@ -6,7 +6,7 @@ const FooterLinkList = ({ footerLinks }) => {
       {footerLinks.map((item, index) => (
         <li
           key={index}
-          className="text-xs font-regular leading-6 uppercase text-grey-100 mb-2 pl-5 flex items-center tracking-wider"
+          className="text-xs font-regular leading-6 uppercase text-grey-100 mb-2 pl-5 flex items-center tracking-wider hover:underline"
         >
           <a key={index} href={item.link}>
             {item.label}
@@ -33,9 +33,6 @@ const Footer = () => {
             height={80}
           />
           <div className="text-sm font-regular leading-6">
-            <a href="https://api.whatsapp.com/send?phone=60168857937">
-              Whatsapp
-            </a>
             Our dedication lies in delivering top-notch and expert-level web
             design and development services.
           </div>
@@ -57,10 +54,6 @@ const Footer = () => {
           <div className="uppercase font-bold mb-4">Navigations</div>
           <FooterLinkList footerLinks={FOOTERLINKS} />
         </div>
-        {/* <div className="lg:col-span-3 col-span-12 text-white tracking-wide">
-          <div className="uppercase font-bold mb-4">Socials</div>
-          <div>Insta and fb here</div>
-        </div> */}
       </div>
     </div>
   );

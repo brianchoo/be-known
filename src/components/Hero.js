@@ -75,7 +75,7 @@ const Hero = () => {
         >
           Be Known.
         </h1>
-        <div className="lg:text-3xl pt-5 headline max-w-screen-lg mx-auto">
+        <div className="text-md lg:text-3xl pt-5 headline max-w-screen-lg mx-auto">
           Our dedication lies in delivering top-notch and expert-level web
           design and development services.
         </div>
@@ -84,6 +84,7 @@ const Hero = () => {
           href="/contact"
           margin="mt-7"
           padding="px-7 py-3"
+          text="Let's get started"
         />
       </div>
     </div>
