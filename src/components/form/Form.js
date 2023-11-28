@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import FormInput from "./FormInput";
 import axios from "axios";
 
-const Form = () => {
+const Form = ({ url }) => {
   const ref = useRef(null);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -23,7 +23,7 @@ const Form = () => {
       setLoading(true);
       let config = {
         method: "post",
-        url: "http://localhost:3000/api/contact",
+        url: "https://main.deuqvid16u3dl.amplifyapp.com/api/contact",
         headers: "application/json",
         data: values,
       };
