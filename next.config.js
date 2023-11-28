@@ -4,6 +4,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  env: {
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+  },
 };
 
 module.exports = nextConfig;
