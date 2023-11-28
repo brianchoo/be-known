@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 const NavigationMap = ({ navigationItems }) => {
-  const router = useRouter();
+  const { pathname } = useRouter();
+
   return (
     <div className="hidden lg:flex lg:gap-x-12">
       {navigationItems.map((item, index) => (
@@ -11,7 +12,7 @@ const NavigationMap = ({ navigationItems }) => {
           key={index}
           href={item.link}
           className={`${
-            router.pathname === item.link ? "text-purple" : "text-gray-900"
+            pathname === item.link ? "text-purple" : "text-gray-900"
           } text-sm font-semibold leading-6 uppercase hover:text-purple`}
         >
           {item.label}

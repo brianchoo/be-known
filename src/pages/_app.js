@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Home App</title>
+        <title>Be Known</title>
       </Head>
       <Layout>
         <Component {...pageProps} />

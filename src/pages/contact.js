@@ -103,3 +103,12 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// export async function getServerSideProps(context) {
+//   const { req } = context;
+//   let url = req.headers.referer;
+//   let splitUrl = url.split("/");
+//   // const host = `http://www.${req.headers.host}`;
+//   url = `${splitUrl[0]}//${splitUrl[2]}`;
+//   return { props: { url } };
+// }
