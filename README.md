@@ -2,11 +2,15 @@
 
 A simple freelance website that is built using Next.js
 
+Website Url
+[https://main.deuqvid16u3dl.amplifyapp.com/](https://main.deuqvid16u3dl.amplifyapp.com/)
+
 ## What technology is used
 
 1. Next.js
 2. Tailwind
 3. Nodemailer
+4. AWS Amplify
 
 ## Installation
 
