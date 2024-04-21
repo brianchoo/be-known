@@ -3,7 +3,7 @@
 A simple freelance website that is built using Next.js
 
 Website Url
-[https://main.deuqvid16u3dl.amplifyapp.com/](https://main.deuqvid16u3dl.amplifyapp.com/)
+[https://main.d2ok9zgtiru8q.amplifyapp.com/](https://main.d2ok9zgtiru8q.amplifyapp.com/)
 
 ## What technology is used
 
